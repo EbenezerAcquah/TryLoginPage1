@@ -19,39 +19,45 @@ function checkInputs() {
 	
 	if(usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
-	} else {
+	} 
+	else {
 		setSuccessFor(username);
 	}
 	
 	if(emailValue === '') {
 		setErrorFor(email, 'Email cannot be blank');
-	} else if (!isEmail(emailValue)) {
+	} 
+	else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'Not a valid email');
-	} else {
+	} 
+	else {
 		setSuccessFor(email);
 	}
 	
 	if(passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
-	} else {
+	} 
+	else {
 		setSuccessFor(password);
 	}
 	
 	if(password2Value === '') {
 		setErrorFor(password2, 'Password2 cannot be blank');
-	} else if(passwordValue !== password2Value) {
+	} 
+	else if(passwordValue !== password2Value) {
 		setErrorFor(password2, 'Passwords does not match');
-	} else{
+	} 
+	else{
 		setSuccessFor(password2);
 	}
 }
 
-//function setErrorFor(input, message) {
-//	const formControl = input.parentElement;
-//	const small = formControl.querySelector('small');
-//	formControl.className = 'form-control error';
-//	small.innerText = message;
-// }
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
 
 
 
